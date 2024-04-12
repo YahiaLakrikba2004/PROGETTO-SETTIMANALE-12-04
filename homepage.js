@@ -1,15 +1,14 @@
 let cartCount = 0
 let cartItems = []
 
-function addToCart() {
+function addToCart(product) {
+  cartItems.push(product)
   cartCount++
   document.getElementById('cartCount').textContent = cartCount
 }
 
 function showCart() {
-  const cartPage = document.getElementById('cartPage')
-  cartPage.style.display = 'block'
-  displayCart()
+  window.location.href = 'carrello.html'
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
@@ -42,7 +41,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         </div>
         <div class="product-buttons">
           <button class="details-button" onclick="redirectToDetail('${product._id}')">Scopri di più</button>
-          <button class="btn btn-primary" onclick="addToCart()">Aggiungi al carrello</button>
+          <button class="btn btn-primary" onclick="addToCart('${product._id}')">Aggiungi al carrello</button>
+
         </div>
       `
       productListContainer.appendChild(productDiv)

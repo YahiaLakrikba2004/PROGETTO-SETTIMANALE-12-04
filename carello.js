@@ -1,19 +1,19 @@
-const cartItems = JSON.parse(localStorage.getItem('cart')) || []
-
-const cartItemsContainer = document.getElementById('cartItems')
-const cartTotalElement = document.getElementById('cartTotal')
-
 function displayCart() {
-  cartItemsContainer.innerHTML = ''
+  const cartItemsContainer = document.getElementById('cartItems')
+  const cartTotalElement = document.getElementById('cartTotal')
+  cartItemsContainer.innerHTML = '' // Puliamo il contenuto del carrello prima di aggiungere nuovi prodotti
   let totalPrice = 0
 
   cartItems.forEach(item => {
     const productDiv = document.createElement('div')
     productDiv.classList.add('product')
 
-    const img = document.createElement('img')
-    img.src = item.imageUrl
-    productDiv.appendChild(img)
+    // Verifica se l'immagine è presente nell'elemento del carrello
+    if (item.imageUrl) {
+      const img = document.createElement('img')
+      img.src = item.imageUrl
+      productDiv.appendChild(img)
+    }
 
     const productInfoDiv = document.createElement('div')
     productInfoDiv.classList.add('product-info')
@@ -37,5 +37,3 @@ function displayCart() {
 
   cartTotalElement.textContent = `Totale: ${totalPrice.toFixed(2)}€`
 }
-
-displayCart()
