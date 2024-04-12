@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrello</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }
+      .product {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+      }
+      .product img {
+        width: 100px;
+        height: auto;
+        margin-right: 20px;
+      }
+      .product-info {
+        flex-grow: 1;
+      }
+      .product-name {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        color: #333;
+      }
+      .product-price {
+        font-size: 1rem;
+        color: #666;
+      }
+      .total {
+        margin-top: 20px;
+        text-align: right;
+        font-size: 1.2rem;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Carrello</h1>
+      <div id="cartItems"></div>
+      <div class="total" id="cartTotal"></div>
+    </div>
+
+    <script src="carello.js"></script>
+  </body>
+</html>
